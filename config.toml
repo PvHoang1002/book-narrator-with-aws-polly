@@ -1,0 +1,30 @@
+relativeURLs = true
+# Change the default theme to be use when building the site with Hugo
+theme = "hugo-theme-learn"
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[params]
+  # Change default color scheme with a variant one. Can be "red", "blue", "green".
+  themeVariant = "workshop"
+  # Git hub repo link
+  editURL = ""
+  description = ""
+  author = "hoang200340@gmail.com"
+  showVisitedLinks = true
+  disableBreadcrumb = false
+  disableNextPrev = false
+  
+[Languages]
+[Languages.en]
+title = "Creating a book narrator using AWS Polly"
+weight = 1
+languageName = "English"
+
+[Languages.vi]
+title = "Tạo trình tường thuật sách bằng AWS Polly"
+weight = 2
+languageName = "Tiếng Việt"
+
