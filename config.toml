@@ -10,7 +10,7 @@ home = [ "HTML", "RSS", "JSON"]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "workshop"
   # Git hub repo link
-  editURL = ""
+  editURL = "https://pvhoang1002.github.io/book-narrator-with-aws-polly/"
   description = ""
   author = "hoang200340@gmail.com"
   showVisitedLinks = true
