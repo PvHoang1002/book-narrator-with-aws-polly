@@ -1,9 +1,9 @@
 ---
-title: "Create S3 Bucket"
+title: "Create Lambda Function"
 date: "`r Sys.Date()`"
-weight: 2
+weight: 4
 chapter: false
-pre: " <b> 2.3 </b> "
+pre: " <b> 2.4 </b> "
 ---
 
 ### Create S3 Bucket

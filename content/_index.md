@@ -9,8 +9,8 @@ chapter: false
 
 ### Overall
 
-This project aims to create an accessible and engaging auditory experience for readers by leveraging AWS Polly’s natural-sounding voices and advanced text-to-speech technology.\
-\
+This project aims to create an accessible and engaging auditory experience for readers by leveraging AWS Polly’s natural-sounding voices and advanced text-to-speech technology.
+
 Below is an overview of the project's architecture:
 
 ![project-diagram](/images/diagrams/project-diagram.png)

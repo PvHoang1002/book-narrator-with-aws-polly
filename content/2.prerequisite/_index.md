@@ -1,21 +1,20 @@
 ---
-title : "Preparation "
-date : "`r Sys.Date()`"
-weight : 2
-chapter : false
-pre : " <b> 2. </b> "
+title: "Preparation "
+date: "`r Sys.Date()`"
+weight: 2
+chapter: false
+pre: " <b> 2. </b> "
 ---
 
-{{% notice info %}}
-You need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.
+{{% notice note %}}
+All the services and activities within this project are within the AWS Free Tier.
 {{% /notice %}}
 
-To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:
-  - [About Amazon EC2](https://000004.awsstudygroup.com/en/)
-  - [Works with Amazon VPC](https://000003.awsstudygroup.com/en/)
-
-In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.
+In order to set up our project, we need to undertake several preparation activities. Firstly, we will build a Virtual Private Cloud (VPC) along with virtual machines. Additionally, we will create S3 buckets and Lambda functions. Furthermore, we will create an IAM Role to grant permissions to the Lambda functions, allowing them to access the S3 buckets and interact with AWS Polly.
 
 ### Content
-  - [Prepare VPC and EC2](2.1-createec2/)
-  - [Create IAM Role](2.2-createiamrole/)
+
+- [Create IAM Roles](2.1.create-iam-roles/)
+- [Create VPC](2.2.create-vpc/)
+- [Create S3 Buckets](2.3.create-s3-buckets/)
+- [Create Lambda Function](2.4.create-lambda-function/)
