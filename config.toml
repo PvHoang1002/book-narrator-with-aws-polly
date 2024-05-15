@@ -16,15 +16,21 @@ home = [ "HTML", "RSS", "JSON"]
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
-  
+
+baseURL = "https://pvhoang1002.github.io/book-narrator-with-aws-polly/"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
 [Languages]
 [Languages.en]
 title = "Creating a book narrator using AWS Polly"
 weight = 1
 languageName = "English"
+contentDir = "content"
 
 [Languages.vi]
 title = "Tạo trình tường thuật sách bằng AWS Polly"
 weight = 2
 languageName = "Tiếng Việt"
+contentDir = "content"
 
