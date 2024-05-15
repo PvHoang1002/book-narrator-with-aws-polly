@@ -26,11 +26,10 @@ defaultContentLanguageInSubdir = true
 title = "Creating a book narrator using AWS Polly"
 weight = 1
 languageName = "English"
-contentDir = "content"
 
 [Languages.vi]
 title = "Tạo trình tường thuật sách bằng AWS Polly"
 weight = 2
 languageName = "Tiếng Việt"
-contentDir = "content"
+baseURL = "https://pvhoang1002.github.io/book-narrator-with-aws-polly/vi/"
 
