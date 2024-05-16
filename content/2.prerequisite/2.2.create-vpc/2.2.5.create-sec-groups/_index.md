@@ -1,9 +1,9 @@
 ---
 title: "Create Security Groups"
 date: "`r Sys.Date()`"
-weight: 4
+weight: 5
 chapter: false
-pre: " <b> 2.2.4 </b> "
+pre: " <b> 2.2.5 </b> "
 ---
 
 #### Create security groups

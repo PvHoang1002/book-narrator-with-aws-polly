@@ -6,17 +6,22 @@ chapter: false
 pre: " <b> 2.2.1 </b> "
 ---
 
-#### Create VPC **Lab VPC**
+#### Create VPC **my-vpc**
 
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-   - Click **Your VPC**.
+1. Go to [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/).
+   ![open-vpc](/images/create-vpc/vpc/open-vpc.png)
+   - Click **Your VPCs**.
    - Click **Create VPC**.
 
-![VPC](/images/2.prerequisite/001-createvpc.png)
+![start-create-vpc](/images/create-vpc/vpc/start-create-vpc.png)
 
 2. At the **Create VPC** page.
-   - In the **Name tag** field, enter **Lab VPC**.
-   - In the **IPv4 CIDR** field, enter: **10.10.0.0/16**.
+   - In the **Resources to create** section, select _VPC only_.
+   - In the **Name tag** field, enter _`my-vpc`_.
+   - In the **IPv4 CIDR** field, enter: _`10.10.0.0/16`_.
+   - All other options, leave as default.
    - Click **Create VPC**.
 
-![VPC](/images/2.prerequisite/002-createvpc.png)
+![configure-vpc](/images/create-vpc/vpc/configure-vpc.png)
+
+![create-vpc](/images/create-vpc/vpc/create-vpc.png)

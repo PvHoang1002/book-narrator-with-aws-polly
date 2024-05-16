@@ -16,27 +16,27 @@ pre: " <b> 2.1.1 </b> "
 ![start-create-role](/images/create-role/start-create-role-1.png)
 
 2. At the **Select trusted entity** page.
-   - In the **Trusted entity type** section, choose _AWS service_.
-   - In the **Use case** section, choose _Lambda_ use case.
+   - In the **Trusted entity type** section, select _AWS service_.
+   - In the **Use case** section, select _Lambda_ use case.
    - Click **Next**.
 
 ![choose-lambda-service](/images/create-role/choose-lambda-service.png)
 
 3. At the **Add permissions** page.
 
-- In the **Permissions policies** section, enter `_AmazonS3FullAccess_` into the search field.
-  - Choose _AmazonS3FullAccess_ policy.
+- In the **Permissions policies** section, enter _`AmazonS3FullAccess`_ into the search field.
+  - Select _AmazonS3FullAccess_ policy.
 
 ![add-s3-permission](/images/create-role/add-s3-permission-to-ec2.png)
 
-- In the **Permissions policies** section, enter `_AmazonPollyFullAccess_` into the search field.
-  - Choose _AmazonPollyFullAccess_ policy.
+- In the **Permissions policies** section, enter _`AmazonPollyFullAccess`_ into the search field.
+  - Select _AmazonPollyFullAccess_ policy.
   - Click **Next**.
 
 ![add-polly-permission](/images/create-role/add-polly-permission-to-lambda.png)
 
 4. At the **Name, review, and create** page.
-   - In the **Role details** section, enter `_lambda-access-s3-polly_` into the **Role name** field.
+   - In the **Role details** section, enter _`lambda-access-s3-polly`_ into the **Role name** field.
    - Reivew **Permissions policy summary** section.
    - Click **Create role**.
 

@@ -1,9 +1,9 @@
 ---
 title: "Create Internet Gateway"
 date: "`r Sys.Date()`"
-weight: 5
+weight: 3
 chapter: false
-pre: " <b> 2.2.5 </b> "
+pre: " <b> 2.2.3 </b> "
 ---
 
 1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)

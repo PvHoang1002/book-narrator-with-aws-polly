@@ -16,7 +16,7 @@ The architecture overview after completing this step will be as follows:
 
 - [Create VPC](2.2.1.create-vpc/)
 - [Create Subnets](2.2.2.create-subnets/)
-- [Create Route Tables](2.2.3.create-rtbs/)
-- [Create Security Group](2.2.4.create-sec-groups/)
-- [Create Internet Gateway](2.2.5.create-igw/)
+- [Create Internet Gateway](2.2.3.create-igw/)
+- [Create Route Tables](2.2.4.create-rtbs/)
+- [Create Security Group](2.2.5.create-sec-groups/)
 - [Create EC2 Instances](2.2.6.create-ec2-instances/)
