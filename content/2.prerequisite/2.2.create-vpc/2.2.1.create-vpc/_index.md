@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 2.2.1 </b> "
 ---
 
-#### Create VPC **my-vpc**
+#### Create VPC **_my-vpc_**
 
 1. Go to [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/).
    ![open-vpc](/images/create-vpc/vpc/open-vpc.png)
@@ -19,7 +19,7 @@ pre: " <b> 2.2.1 </b> "
    - In the **Resources to create** section, select _VPC only_.
    - In the **Name tag** field, enter _`my-vpc`_.
    - In the **IPv4 CIDR** field, enter: _`10.10.0.0/16`_.
-   - All other options, leave as default.
+   - All other settings, leave as default.
    - Click **Create VPC**.
 
 ![configure-vpc](/images/create-vpc/vpc/configure-vpc.png)

@@ -15,7 +15,7 @@ pre: " <b> 2.2.2 </b> "
 ![start-create-public-subnet](/images/create-vpc/subnet/start-create-subnet-1.png)
 
 2. At the **Create subnet** page.
-   - In the **VPC ID** section, select **my-vpc**.
+   - In the **VPC ID** section, select **_my-vpc_**.
    - In the **Subnet name** field, enter _`public-subnet`_.
    - In the **Availability Zone** section, select the first Availability zone **ap-southeast-1a**.
    - In the field **IPv4 subnet CIRD block** field, enter _`10.10.1.0/24`_.
@@ -34,7 +34,7 @@ pre: " <b> 2.2.2 </b> "
 ![start-create-private-subnet](/images/create-vpc/subnet/start-create-subnet-2.png)
 
 2. At the **Create subnet** page.
-   - In the **VPC ID** section, select **my-vpc**.
+   - In the **VPC ID** section, select **_my-vpc_**.
    - In the **Subnet name** field, enter _`private-subnet`_.
    - In the **Availability Zone** section, select the first Availability zone **ap-southeast-1a**.
    - In the field **IPv4 subnet CIRD block** field, enter _`10.10.2.0/24`_.

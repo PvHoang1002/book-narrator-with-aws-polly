@@ -6,82 +6,54 @@ chapter: false
 pre: " <b> 2.2.5 </b> "
 ---
 
-#### Create security groups
+In this step, we will proceed to create the security groups used for our instances.
 
-In this step, we will proceed to create the security groups used for our instances. As you can see, these security groups will not need to open traditional ports to **ssh** like port **22** or **remote desktop** through port **3389**.
+#### Create public security group
 
-#### Create security group for Linux instance located in public subnet
+1. At the [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/) page.
+   - Click **Security groups**.
+   - Click **Create security group**.
 
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc)
+![start-create-sg-1](/images/create-vpc/sg/start-create-sg-1.png)
 
-- Click **Security Group**.
-- Click **Create security group**.
+2. At the **Create security group** page, in the **Basic details** section.
+   - In the **Security group name** field, enter _`public-security-group`_.
+   - In the **Description** field, enter _`Security group for public instances`_.
+   - Select **_my-vpc_**.
 
-![SG](/images/2.prerequisite/019-createsg.png)
+![config-public-sg](/images/create-vpc/sg/config-public-sg.png)
 
-3. In the **Security group name** field, enter **SG Public Linux Instance**.
+3. In the **Inbound rules** section, add two rules.
+   - First rule: select **All ICMP - IVv4** type and **Anywhere-IPv4** source.
+   - Second rule: select **SSH** type and **Anywhere-IPv4** source.
 
-- In the **Description** section, enter **SG Public Linux Instance**.
-- In the **VPC** section, click the **X** to reselect the **Lab VPC** you created for this lab.
+![inbound-rules-for-public-sg](/images/create-vpc/sg/inbound-rules-for-public-sg.png)
 
-![SG](/images/2.prerequisite/020-createsg.png)
+4. Scroll down to bottom of the page.
+   - All other settings, leave as default.
+   - Click **Create security group**.
 
-4. Keep **Outbound rule**, drag the mouse to the bottom.
+#### Create private security group
 
-- Click **Create security group**.
+1. At the [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/) page.
+   - Click **Security groups**.
+   - Click **Create security group**.
 
-{{%notice tip%}}
-As you can see, the security group we created to use for Linux public instances will not need to open traditional ports to **ssh** like port **22**.
-{{%/notice%}}
+![start-create-sg-2](/images/create-vpc/sg/start-create-sg-2.png)
 
-#### Create a security group for a Windows instance located in a private subnet
+2. At the **Create security group** page, in the **Basic details** section.
+   - In the **Security group name** field, enter _`private-security-group`_.
+   - In the **Description** field, enter _`Security group for private instances`_.
+   - Select **_my-vpc_**.
 
-1. After successfully creating a security group for the Linux instance located in the public subnet, click the Security Groups link to return to the Security groups list.
+![config-private-sg](/images/create-vpc/sg/config-private-sg.png)
 
-![SG](/images/2.prerequisite/021-createsg.png)
+3. In the **Inbound rules** section, click **Add rule**.
+   - Select **SSH** type.
+   - Select **Custom** source and enter _`10.10.1.0/24`_ (the IPv4 CIDR block of public subnet).
 
-2. Click **Create security group**.
+![inbound-rules-for-private-sg](/images/create-vpc/sg/inbound-rules-for-private-sg.png)
 
-3. In the **Security group name** field, enter **SG Private Windows Instance**.
-
-- In the **Description** section, enter **SG Private Windows Instance**.
-- In the **VPC** section, click the **X** to reselect the **Lab VPC** you created for this lab.
-
-![SG](/images/2.prerequisite/022-createsg.png)
-
-4. Scroll down.
-
-- Add **Outbound rule** to allow TCP 443 connection to 10.10.0.0/16 ( CIDR of **Lab VPC** we created)
-- Click **Create security group**.
-
-![SG](/images/2.prerequisite/023-createsg.png)
-
-{{%notice tip%}}
-For the Instance in the private subnet, we will connect to the **Session Manager** endpoint over a TLS encrypted connection, so we need to allow outbound connection from our instance to VPC CIDR through port 443.
-{{%/notice%}}
-
-#### Create security group for VPC Endpoint
-
-1. In this step, we will create security group for VPC Endpoint of **Session Manager**.
-2. After successfully creating the security group for the Windows instance in the private subnet, click the Security Groups link to return to the Security groups list.
-3. Click **Create security group**.
-4. In the **Security group name** field, enter **SG VPC Endpoint**.
-
-- In the **Description** section, enter **SG VPC Endpoint**.
-- In the **VPC** section, click the **X** to reselect the **Lab VPC** you created for this lab.
-
-![SG](/images/2.prerequisite/024-createsg.png)
-
-5. Scroll down.
-
-- Delete **Outbound rule**.
-
-![SG](/images/2.prerequisite/025-createsg.png)
-
-6. Add **Inbound rule** allowing TCP 443 to come from 10.10.0.0/16 ( CIDR of **Lab VPC** we created ).
-
-- Click **Create security group**.
-
-![SG](/images/2.prerequisite/026-createsg.png)
-
-So we are done creating the necessary security groups for EC2 instances and VPC Endpoints.
+4. Scroll down to bottom of the page.
+   - All other settings, leave as default.
+   - Click **Create security group**.

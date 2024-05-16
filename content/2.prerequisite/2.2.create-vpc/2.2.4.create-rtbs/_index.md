@@ -16,7 +16,7 @@ pre: " <b> 2.2.4 </b> "
 
 2. At the **Create route table** page.
    - In the **Name** field, enter _`public-route-table`_.
-   - In the **VPC** section, select **my-vpc**.
+   - In the **VPC** section, select **_my-vpc_**.
    - Click **Create route table**.
 
 ![create-public-rtb](/images/create-vpc/rtb/create-public-rtb.png)
@@ -60,7 +60,7 @@ The routes of the **Public route table** were successfully edited.
 
 2. At the **Create route table** page.
    - In the **Name** field, enter _`private-route-table`_.
-   - In the **VPC** section, select **my-vpc**.
+   - In the **VPC** section, select **_my-vpc_**.
    - Click **Create route table**.
 
 ![create-private-rtb](/images/create-vpc/rtb/create-private-rtb.png)
