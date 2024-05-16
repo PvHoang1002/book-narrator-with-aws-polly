@@ -1,5 +1,5 @@
 ---
-title: "PvHoang's workshop"
+title: "Book narrator with AWS Polly"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false

@@ -6,66 +6,102 @@ chapter: false
 pre: " <b> 2.2.6 </b> "
 ---
 
-1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)
+#### Create public instance
 
-- Click **Instances**.
-- Click **Launch instances**.
+1. Go to [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/).
+   ![choose](/images/create-ec2/choose-ec2.png)
+   - Click **Instances**.
+   - Click **Launch instances**.
 
-2. On the **Step 1: Choose an Amazon Machine Image (AMI)** page.
+![start-create-public-instance](/images/create-ec2/start-create-ec2-1.png)
 
-- Drag the mouse down.
-- Click **Select** to select AMI **Microsoft Windows Server 2019 Base**.
+2. At the **Laucnh an instance** page, in the **Name and tags** section.
+   - Enter _`public-instance`_.
 
-![EC2](/images/2.prerequisite/034-createec2.png)
+![public-instance-name](/images/create-ec2/public-instance.png)
 
-3. On the **Step 2: Choose an Instance Type** page.
+3. In the **Application and OS Images** section.
+   - Select **Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type**.
 
-- Click on Instance type **t2.micro**.
-- Click **Next: Configure Instance Details**.
+![instance-os-image](/images/create-ec2/ec2-os-image.png)
 
-![EC2](/images/2.prerequisite/029-createec2.png)
+4. Next, we will choose instance type and select key pair for securly connecting to instances.
 
-4. At **Step 3: Configure Instance Details** page
+- In the **Instance Type** section.
+  - Select **Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type**.
+- In the **Keypair** section.
+  - Select **_aws-keypair_**. If no key pair exists, please refer to the instructions for [creating a new key pair](https://000003.awsstudygroup.com/4-createec2server/4.1-createec2/#:~:text=Select%20an%20Instance%20type%20and%20opt%20to%20Create%20a%20new%20key%20pair).
 
-- In the **Network** section, select **Lab VPC**.
-- In the **Subnet** section, select **Lab Private Subnet**.
-- At **Auto-assign Public IP** select **Use subnet setting (Disable)**
-- Click **Next: Add Storage**.
+![choose-instance-type-keypair](/images/create-ec2/choose-instance-type-keypair.png)
 
-![EC2](/images/2.prerequisite/035-createec2.png)
+5. Next, we will configure **_public-instance_**'s network settings and storage.
 
-5. Click **Next: Add Tags** to move to the next step.
+- In the **Network settings** section.
+  - At the **VPC** field, select **_my-vpc_**.
+  - At the **Subnet** field, select **_public-subnet_**.
+  - At the **Auto-assign public IP** field, select **Enable**.
+  - At the **Firewall** field, choose **Select existing security group** and select **_public-security-group_**.
+- In the **Configure storage** section.
+  - Select 1x **8** GiB **gp2** root volume.
+- Click **Laucnh instance**.
 
-- Click **Next: Configure Security Group** to move to the next step.
+![launch-public-instance](/images/create-ec2/launch-public-instance.png)
 
-6. On page **Step 6: Configure Security Group**.
+#### Create private instance
 
-- Select **Select an existing security group**.
-- Select security group **SG Private Windows Instance**.
-- Click **Review and Launch**.
+1. At the [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/) page.
+   - Click **Launch instances**.
 
-![EC2](/images/2.prerequisite/036-createec2.png)
+![start-create-private-instance](/images/create-ec2/start-create-ec2-2.png)
 
-7. The warning dialog box appears because we do not configure the firewall to allow connections to port 22, Click **Continue** to continue.
+2. At the **Laucnh an instance** page, in the **Name and tags** section.
+   - Enter _`private-instance`_.
 
-8. At page **Step 7: Review Instance Launch**.
+![private-instance-name](/images/create-ec2/private-instance.png)
 
-- Click **Launch**.
+3. In the **Application and OS Images** section.
+   - Select **Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type**.
 
-9. In the **Select an existing key pair or create a new key pair** dialog box.
+![instance-os-image](/images/create-ec2/ec2-os-image.png)
 
-- Click **Choose an existing key pair**.
-- In the **Key pair name** section, select **LabKeypair**.
-- Click **I acknowledge that I have access to the corresponding private key file, and that without this file, I won't be able to log into my instance.**.
-- Click **Launch Instances** to create EC2 server.
+4. Next, we will choose instance type and select key pair for securly connecting to instances.
 
-10. Click **View Instances** to return to the list of EC2 instances.
+- In the **Instance Type** section.
+  - Select **Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type**.
+- In the **Keypair** section.
+  - Select **_aws-keypair_**.
 
-11. Click the edit icon under the **Name** column.
+![choose-instance-type-keypair](/images/create-ec2/choose-instance-type-keypair.png)
 
-- In the **Edit Name** dialog box, enter **Private Windows Instance**.
-- Click **Save**.
+5. Next, we will configure **_private-instance_**'s network settings and storage.
 
-![EC2](/images/2.prerequisite/033-createec2.png)
+- In the **Network settings** section.
+  - At the **VPC** field, select **_my-vpc_**.
+  - At the **Subnet** field, select **_private-subnet_**.
+  - At the **Auto-assign public IP** field, select **Disable**.
+  - At the **Firewall** field, choose **Select existing security group** and select **_private-security-group_**.
+- In the **Configure storage** section.
+  - Select 1x **8** GiB **gp2** root volume.
 
-Next, we will proceed to create IAM Roles to serve the Session Manager.
+![setting-private-instance](/images/create-ec2/setting-private-instance.png)
+
+6. Click the **Advanced details** section.
+   - At the **Instance profile** field, select **_ec2-access-s3_**.
+   - Click **Launch instance**.
+
+![launch-private-instance](/images/create-ec2/launch-private-instance.png)
+
+In the **Instances** section, review the two public/private instances that were successfully created and their states are **Running**.
+
+![create-instances-success](/images/create-ec2/create-ec2-instances-success.png)
+
+7. Choose the **_private-instance_**.
+   - Click **Actions**.
+   - Click **Security**.
+   - Click **Modify IAM role**.
+
+![start-check-private-instance-role](/images/create-ec2/start-check-private-instance-role.png)
+
+The **_private-instance_**'s IAM role is **_ec2-access-s3_**.
+
+![check-private-instance-role](/images/create-ec2/check-private-instance-role-success.png)
