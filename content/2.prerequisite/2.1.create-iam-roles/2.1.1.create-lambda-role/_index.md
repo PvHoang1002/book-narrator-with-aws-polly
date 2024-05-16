@@ -24,19 +24,19 @@ pre: " <b> 2.1.1 </b> "
 
 3. At the **Add permissions** page.
 
-- In the **Permissions policies** section, enter _AmazonS3FullAccess_ into the search field.
+- In the **Permissions policies** section, enter `_AmazonS3FullAccess_` into the search field.
   - Choose _AmazonS3FullAccess_ policy.
 
-![add-s3-permission](/images/create-role/add-s3-permission-to-lambda.png)
+![add-s3-permission](/images/create-role/add-s3-permission-to-ec2.png)
 
-- In the **Permissions policies** section, enter _AmazonPollyFullAccess_ into the search field.
+- In the **Permissions policies** section, enter `_AmazonPollyFullAccess_` into the search field.
   - Choose _AmazonPollyFullAccess_ policy.
-  - Click **Next**
+  - Click **Next**.
 
 ![add-polly-permission](/images/create-role/add-polly-permission-to-lambda.png)
 
 4. At the **Name, review, and create** page.
-   - In the **Role details** section, enter _lambda-access-s3-polly_ into the **Role name** field.
+   - In the **Role details** section, enter `_lambda-access-s3-polly_` into the **Role name** field.
    - Reivew **Permissions policy summary** section.
    - Click **Create role**.
 
