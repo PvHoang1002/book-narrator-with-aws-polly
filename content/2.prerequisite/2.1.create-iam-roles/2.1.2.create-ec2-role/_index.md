@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 2.1.2 </b> "
 ---
 
-#### Create Role **_ec2-access-s3_**
+#### Create role **_ec2-access-s3_**
 
 1. At the [AWS Identity and Access Management (IAM)](https://aws.amazon.com/iam/) page.
    - Click **Create role**.

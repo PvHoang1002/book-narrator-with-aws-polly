@@ -1,22 +1,24 @@
 ---
-title: "PvHoang's workshop"
+title: "Trình tường thuật sách với AWS Polly"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
 ---
 
-# Làm việc với Amazon System Manager - Session Manager
+# Tạo trình tường thuật sách bằng AWS Polly
 
-### Tổng quan
+### Tổng thể
 
-Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về Amazon System Manager - Session Management. Thực hành tạo kết nối đến máy chủ public và máy chủ private trong VPC.
+Dự án này nhằm mục đích tạo ra trải nghiệm thính giác hấp dẫn và dễ tiếp cận cho người đọc bằng cách tận dụng giọng nói có âm thanh tự nhiên và công nghệ chuyển văn bản thành giọng nói tiên tiến của AWS Polly.
 
-![project-diagram](/images/diagrams/project-diagram.png)
+Dưới đây là tổng quan về kiến ​​trúc của dự án:
+
+![sơ đồ dự án](/images/diagrams/project-diagram.png)
 
 ### Nội dung
 
-1.  [Giới thiệu](1.introduce/)
-2.  [Các bước chuẩn bị](2.prerequisite/)
-3.  [Kiểm thử hàm Lambda](3.test-lambda-function/)
+1.  [Giới thiệu](1.introduce/)
+2.  [Chuẩn bị](2.prerequisite/)
+3.  [Kiểm tra hàm Lambda](3.test-lambda-function/)
 4.  [Truy cập vào các máy ảo EC2](4.access-to-ec2-instances/)
 5.  [Dọn dẹp tài nguyên](5.clean-up-resources/)

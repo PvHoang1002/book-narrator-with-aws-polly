@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 2.1.1 </b> "
 ---
 
-#### Create Role **_lambda-access-s3-polly_**
+#### Create role **_lambda-access-s3-polly_**
 
 1. Go to [AWS Identity and Access Management (IAM)](https://aws.amazon.com/iam/).
    ![open-iam](/images/create-role/open-iam.png)
