@@ -20,5 +20,5 @@ Below is an overview of the project's architecture:
 1.  [Introduction](1.introduce/)
 2.  [Preparation](2.prerequisite/)
 3.  [Test Lambda function](3.test-lambda-function/)
-4.  [Access to EC2 instances](4.access-to-ec2-instances/)
+4.  [Working with EC2 instances](4.working-with-ec2-instances/)
 5.  [Clean up resources](5.clean-up-resources/)

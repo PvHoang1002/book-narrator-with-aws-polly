@@ -1,5 +1,5 @@
 ---
-title: "Access to EC2 instances"
+title: "Working with EC2 instances"
 date: "`r Sys.Date()`"
 weight: 4
 chapter: false
@@ -12,5 +12,5 @@ Now, we will not upload files directly to the S3 bucket like previous operations
 
 ### Content
 
-- [Access to instances](4.1.access-to-ec2-instances/)
+- [Access to EC2 instances](4.1.access-to-ec2-instances/)
 - [Upload file to S3 bucket](4.2.upload-file-to-bucket/)

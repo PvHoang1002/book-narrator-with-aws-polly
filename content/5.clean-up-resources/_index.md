@@ -6,83 +6,73 @@ chapter: false
 pre: "<b>5. </b>"
 ---
 
-We will take the following steps to delete the resources we created in this lab.
+We will take the following steps to delete the resources we created in this project.
 
-#### Delete EC2 instance
+#### Delete EC2 instances
 
-1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)
+Go to [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/), click **Instances**.
 
-   - Click **Instances**.
-   - Select both **Public Linux Instance** and **Private Windows Instance** instances.
-   - Click **Instance state**.
-   - Click **Terminate instance**, then click **Terminate** to confirm.
+- Select **public-instance**.
+  - Click **Instance state**.
+  - Click **Terminate instance**, then click **Terminate** to confirm.
+- For **_private-instance_**, perform the same actions.
 
-2. Go to [IAM service management console](https://console.aws.amazon.com/iamv2/home#/home)
-   - Click **Roles**.
-   - In the search box, enter **SSM**.
-   - Click to select **SSM-Role**.
-   - Click **Delete**, then enter the role name **SSM-Role** and click **Delete** to delete the role.
+![delete-ec2-instance](/images/clean-up-resource/delete-ec2-instance.png)
 
-![Clean](/images/6.clean/001-clean.png)
+#### Delete S3 buckets
 
-3. Click **Users**.
-   - Click on user **Portfwd**.
-   - Click **Delete**, then enter the user name **Portfwd** and click **Delete** to delete the user.
+Go to [Amazon Simple Storage Service (Amazon S3)](https://aws.amazon.com/s3/).
 
-#### Delete S3 bucket
+- Select **_input-bucket-for-polly_**.
+  - Click **Empty**.
+  - Enter _`permanently delete`_, then click **Empty** to proceed to delete the objects in the bucket.
+  - After deleting all objects in the bucket, click **Delete**.
+  - Enter _`input-bucket-for-polly`_, then click **Delete bucket** to proceed with deleting the S3 bucket.
+- For **_output-bucket-from-polly_**, perform the same actions.
 
-1. Access [System Manager - Session Manager service management console](https://console.aws.amazon.com/systems-manager/session-manager).
+![empty-bucket](/images/clean-up-resource/empty-bucket.png)
 
-   - Click the **Preferences** tab.
-   - Click **Edit**.
-   - Scroll down.
-   - In the section **S3 logging**.
-   - Uncheck **Enable** to disable logging.
-   - Scroll down.
-   - Click **Save**.
+![delete-bucket](/images/clean-up-resource/delete-bucket.png)
 
-2. Go to [S3 service management console](https://s3.console.aws.amazon.com/s3/home)
+#### Delete Lambda function
 
-   - Click on the S3 bucket we created for this lab. (Example: lab-fcj-bucket-0001 )
-   - Click **Empty**.
-   - Enter **permanently delete**, then click **Empty** to proceed to delete the object in the bucket.
-   - Click **Exit**.
+Go to [AWS Lambda](https://aws.amazon.com/lambda/)
 
-3. After deleting all objects in the bucket, click **Delete**
+- Select **_text-to-speech-converter_**.
+- Click **Actions**, then click **Delete**.
+- In the confirm box, enter _`delete`_, then click **Delete** to proceed with deleting the function.
 
-![Clean](/images/6.clean/002-clean.png)
+![delete-lambda-function](/images/clean-up-resource/delete-lambda-function.png)
 
-4. Enter the name of the S3 bucket, then click **Delete bucket** to proceed with deleting the S3 bucket.
+#### Delete VPC Endpoint
 
-![Clean](/images/6.clean/003-clean.png)
+Go to [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/).
 
-#### Delete VPC Endpoints
+- Click **Endpoints**.
+- Select **_s3-endpoint_**.
+- Click **Actions**, then click **Delete VPC endpoints**.
+- In the confirm box, enter _`delete`_, then click **Delete** to proceed with deleting the endpoint.
 
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-   - Click **Endpoints**.
-   - Select the 4 endpoints we created for the lab including **SSM**, **SSMMESSAGES**, **EC2MESSAGES**, **S3GW**.
-   - Click **Actions**.
-   - Click **Delete VPC endpoints**.
-
-![Clean](/images/6.clean/004-clean.png)
-
-2. In the confirm box, enter **delete**.
-
-   - Click **Delete** to proceed with deleting endpoints.
-
-3. Click the refresh icon, check that all endpoints have been deleted before proceeding to the next step.
-
-![Clean](/images/6.clean/005-clean.png)
+![delete-endpoint](/images/clean-up-resource/delete-endpoint.png)
 
 #### Delete VPC
 
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
+At the [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/) page.
 
-   - Click **Your VPCs**.
-   - Click on **Lab VPC**.
-   - Click **Actions**.
-   - Click **Delete VPC**.
+- Click **Your VPCs**.
+- Select **_my-vpc_**.
+- Click **Actions**, then click **Delete VPC**.
+- In the confirm box, enter _`delete`_ to confirm, then click **Delete** to delete **_my-vpc_** and its related resources.
 
-2. In the confirm box, enter **delete** to confirm, click **Delete** to delete **Lab VPC** and related resources.
+![delete-vpc](/images/clean-up-resource/delete-vpc.png)
 
-![Clean](/images/6.clean/006-clean.png)
+#### Delete IAM Roles
+
+Go to [AWS Identity and Access Management (IAM)](https://aws.amazon.com/iam/).
+
+- Click **Roles**.
+- Select both **_ec2-access-s3_** and **_lambda-access-s3-polly_** roles.
+- Click **Delete**.
+- In the confirm box, enter _`delete`_ to confirm, then click **Delete** to proceed with deleting IAM roles.
+
+![delete-iam-role](/images/clean-up-resource/delete-iam-role.png)
