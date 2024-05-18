@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 2.3 </b> "
 ---
 
-In this step, we continue to create S3 buckets. Along with that, we will also create a gateway endpoint to help virtual machines access those buckets.
+In this section, we continue to create S3 buckets. Along with that, we will also create a gateway endpoint to help virtual machines access those buckets.
 
 ### Content
 

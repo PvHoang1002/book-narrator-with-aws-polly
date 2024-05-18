@@ -1,0 +1,4 @@
+Welcome to the world of audio books! 
+In this project, we aim to transform written text into engaging spoken content using Amazon Polly. With the power of artificial intelligence, we can convert any written material, be it a book, article, or newsletter, into high-quality audio narration. 
+By leveraging AWS Lambda and Amazon S3, we automate the process of text-to-speech conversion, making it convenient and scalable. 
+Join us on this journey as we explore the seamless integration of technology and storytelling, making knowledge accessible to all, one spoken word at a time.

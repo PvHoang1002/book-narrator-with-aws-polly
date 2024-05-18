@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 2.2 </b> "
 ---
 
-In this step, we will create a VPC with 2 public/private subnets. At each subnet, we will also place an additional EC2 Linux Instance.
+In this section, we will create a VPC with 2 public/private subnets. At each subnet, we will also place an additional EC2 Linux Instance.
 
 The architecture overview after completing this step will be as follows:
 

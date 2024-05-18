@@ -6,17 +6,11 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-With Session Manager, we can view the history of connections to instances through **Session history**. However, we have not seen the details of the commands used in a session.
+Now, we will not upload files directly to the S3 bucket like previous operations. Instead, we are going to access the EC2 instances and perform actions with the S3 buckets via the gateway endpoint.
 
-![S3](/images/4.s3/001-s3.png)
+![vpc-diagram](/images/diagrams/vpc-diagram.png)
 
-In this section, we will proceed to create an S3 bucket and configure the session logs feature to see the details of the commands used in the session.
+### Content
 
-![port-fwd](/images/arc-log.png)
-
-### Content:
-
-- [Update IAM Role](./4.1-updateiamrole/)
-- [Create **S3 Bucket**](./4.2-creates3bucket/)
-- [Create S3 Gateway endpoint](./4.3-creategwes3)
-- [Configure **Session logs**](./4.4-configsessionlogs/)
+- [Access to instances](4.1.access-to-ec2-instances/)
+- [Upload file to S3 bucket](4.2.upload-file-to-bucket/)
