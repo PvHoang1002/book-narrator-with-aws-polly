@@ -10,7 +10,7 @@ pre: " <b> 4.2. </b> "
 
 1. We are now working on **_private-instance_**.
    - Enter _`nano hello.txt`_ command and press **Enter**.
-   - Copy the content of the text file we just used in **section 3**.
+   - Copy the content of the text file we just used in [**section 3**](3.test-lambda-function/).
    - Paste it into the **MobaXterm** screen.
    - Press the key combination Ctrl + S to save the file content and Ctrl + X to exit the nano editor.
 
@@ -25,7 +25,7 @@ There will be a message **_upload: ./hello.txt to s3://input-bucket-for-polly_**
 
 3. Enter _`aws s3 ls hello.txt s3://output-bucket-from-polly --endpoint-url https://s3.ap-southeast-1.amazonaws.com`_ command and press **Enter**.
 
-This command lists all files contained in **_output-bucket-from-polly_** and there is a file named **_hello.mp3_**. It means the Lambda function was executed successfully.
+This command will list all files contained in **_output-bucket-from-polly_** and we can see there is a file named **_hello.mp3_**. It means the Lambda function was executed successfully.
 
 ![check-hello-output](/images/connect-ec2/check-hello-output.png)
 
