@@ -6,15 +6,15 @@ chapter: false
 pre: " <b> 2.2.5 </b> "
 ---
 
-In this step, we will proceed to create the security groups used for our instances.
+In this step, we will proceed to create the security groups used for our EC2 instances.
 
-#### Create public security group
+#### Create **_public-security-group_**
 
 1. At the [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/) page.
    - Click **Security groups**.
    - Click **Create security group**.
 
-![start-create-sg-1](/images/create-vpc/sg/start-create-sg-1.png)
+![start-create-public-sg](/images/create-vpc/sg/start-create-sg-1.png)
 
 2. At the **Create security group** page, in the **Basic details** section.
    - In the **Security group name** field, enter _`public-security-group`_.
@@ -33,13 +33,13 @@ In this step, we will proceed to create the security groups used for our instanc
    - All other settings, leave as default.
    - Click **Create security group**.
 
-#### Create private security group
+#### Create **_private-security-group_**
 
 1. At the [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/) page.
    - Click **Security groups**.
    - Click **Create security group**.
 
-![start-create-sg-2](/images/create-vpc/sg/start-create-sg-2.png)
+![start-create-private-sg](/images/create-vpc/sg/start-create-sg-2.png)
 
 2. At the **Create security group** page, in the **Basic details** section.
    - In the **Security group name** field, enter _`private-security-group`_.
@@ -50,7 +50,7 @@ In this step, we will proceed to create the security groups used for our instanc
 
 3. In the **Inbound rules** section, click **Add rule**.
    - Select **SSH** type.
-   - Select **Custom** source and enter _`10.10.1.0/24`_ (the IPv4 CIDR block of public subnet).
+   - Select **Custom** source and enter _`10.10.1.0/24`_ (the IPv4 CIDR block of **_public-subnet_**).
 
 ![inbound-rules-for-private-sg](/images/create-vpc/sg/inbound-rules-for-private-sg.png)
 

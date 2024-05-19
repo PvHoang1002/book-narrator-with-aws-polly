@@ -16,7 +16,7 @@ pre: " <b> 2.2.1 </b> "
 ![start-create-vpc](/images/create-vpc/vpc/start-create-vpc.png)
 
 2. At the **Create VPC** page.
-   - In the **Resources to create** section, select _VPC only_.
+   - In the **Resources to create** section, select **VPC only**.
    - In the **Name tag** field, enter _`my-vpc`_.
    - In the **IPv4 CIDR** field, enter: _`10.10.0.0/16`_.
    - All other settings, leave as default.

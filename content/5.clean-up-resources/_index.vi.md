@@ -1,83 +1,78 @@
-+++
-title = "Dọn dẹp tài nguyên  "
-date = 2021
-weight = 6
-chapter = false
-pre = "<b>6. </b>"
-+++
+---
+title: "Dọn dẹp tài nguyên"
+date: "`r Sys.Date()`"
+weight: 5
+chapter: false
+pre: "<b>5. </b>"
+---
 
-Chúng ta sẽ tiến hành các bước sau để xóa các tài nguyên chúng ta đã tạo trong bài thực hành này.
+Chúng ta sẽ thực hiện các bước sau để xóa các tài nguyên mà chúng ta đã tạo trong project này.
 
-#### Xóa EC2 instance
+#### Xóa các máy ảo EC2
 
-1. Truy cập [giao diện quản trị dịch vụ EC2](https://console.aws.amazon.com/ec2/v2/home)
-  + Click **Instances**.
-  + Click chọn cả 2 instance **Public Linux Instance** và **Private Windows Instance**. 
-  + Click **Instance state**.
-  + Click **Terminate instance**, sau đó click **Terminate** để xác nhận.
+Đi tới trang [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/), nháy chuột vào **Instances**.
 
-2. Truy cập [giao diện quản trị dịch vụ IAM](https://console.aws.amazon.com/iamv2/home#/home)
-  + Click **Roles**.
-  + Tại ô tìm kiếm , điền **SSM**.
-  + Click chọn **SSM-Role**.
-  + Click **Delete**, sau đó điền tên role **SSM-Role** và click **Delete** để xóa role.
-  
-![Clean](/images/6.clean/001-clean.png)
+- Chọn **public-instance**.
+  - Nháy chuột vào **Instance state**.
+  - Nháy chuột vào **Terminate instance**, sau đó nháy chuột vào **Terminate** để xác nhận.
+- Đối với máy ảo **_private-instance_**, thực hiện những thao tác tương tự.
 
-3. Click **Users**.
-  + Click chọn user **Portfwd**.
-  + Click **Delete**, sau đó điền tên user **Portfwd** và click **Delete** để xóa user.
+![xóa máy ảo ec2](/images/clean-up-resource/delete-ec2-instance.png)
 
-#### Xóa S3 bucket
+#### Xóa các S3 bucket
 
-1. Truy cập [giao diện quản trị dịch vụ System Manager - Session Manager](https://console.aws.amazon.com/systems-manager/session-manager).
-  + Click tab **Preferences**.
-  + Click **Edit**.
-  + Kéo chuột xuống dưới.
-  + Tại mục **S3 logging**.
-  + Bỏ chọn **Enable** để tắt tính năng logging.
-  + Kéo chuột xuống dưới.
-  + Click **Save**.
+Đi tới trang [Amazon Simple Storage Service (Amazon S3)](https://aws.amazon.com/s3/).
 
-2. Truy cập [giao diện quản trị dịch vụ S3](https://s3.console.aws.amazon.com/s3/home)
-  + Click chọn S3 bucket chúng ta đã tạo cho bài thực hành. ( Ví dụ : lab-fcj-bucket-0001 )
-  + Click **Empty**.
-  + Điền **permanently delete**, sau đó click **Empty** để tiến hành xóa object trong bucket.
-  + Click **Exit**.
+- Chọn bucket **_input-bucket-for-polly_**.
+  - Nháy chuột vào **Empty**.
+  - Nhập _`permanently delete`_, sau đó nháy chuột vào **Empty** để tiến hành xóa các object có trong bucket.
+  - Sau khi xóa hết các object trong bucket, nháy chuột vào **Delete**.
+  - Nhập _`input-bucket-for-polly`_, sau đó nháy chuột vào **Delete bucket** để tiến hành xóa S3 bucket.
+- Đối với bucket **_output-bucket-from-polly_**, thực hiện những thao tác tương tự.
 
-3. Sau khi xóa hết object trong bucket, click **Delete**
+![làm rỗng bucket](/images/clean-up-resource/empty-bucket.png)
 
-![Clean](/images/6.clean/002-clean.png)
+![xóa bucket](/images/clean-up-resource/delete-bucket.png)
 
-4. Điền tên S3 bucket, sau đó click **Delete bucket** để tiến hành xóa S3 bucket.
+#### Xóa hàm Lambda
 
-![Clean](/images/6.clean/003-clean.png)
+Đi tới trang [AWS Lambda](https://aws.amazon.com/lambda/)
 
-#### Xóa các VPC Endpoint
+- Chọn **_text-to-speech-converter_**.
+- Nháy chuột vào **Actions**, sau đó nháy chuột vào **Delete**.
+- Trong cửa sổ xác nhận, nhập _`delete`_, sau đó nháy chuột vào **Delete** để tiến hành xóa hàm.
 
-1. Truy cập vào [giao diện quản trị dịch vụ VPC](https://console.aws.amazon.com/vpc/home)
-  + Click **Endpoints**.
-  + Chọn 4 endpoints chúng ta đã tạo cho bài thực hành bao gồm **SSM**, **SSMMESSAGES**, **EC2MESSAGES**, **S3GW**.
-  + Click **Actions**.
-  + Click **Delete VPC endpoints**.
+![xóa hàm lambda](/images/clean-up-resource/delete-lambda-function.png)
 
-![Clean](/images/6.clean/004-clean.png)
+#### Xóa VPC Endpoint
 
-2. Tại ô confirm , điền **delete**.
-  + Click **Delete** để tiến hành xóa các endpoints.
+Đi tới trang [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/).
 
-3. Click biểu tượng refresh, kiểm tra tất cả các endpoints đã bị xóa trước khi làm bước tiếp theo.
+- Nháy chuột vào **Endpoints**.
+- Chọn **_s3-endpoint_**.
+- Nháy chuột vào **Actions**, sau đó nháy chuột vào **Delete VPC endpoints**.
+- Trong cửa sổ xác nhận, nhập _`delete`_, sau đó nháy chuột vào **Delete** để tiến hành xóa endpoint.
 
-![Clean](/images/6.clean/005-clean.png)
+![xóa endpoint](/images/clean-up-resource/delete-endpoint.png)
 
 #### Xóa VPC
 
-1. Truy cập vào [giao diện quản trị dịch vụ VPC](https://console.aws.amazon.com/vpc/home)
-  + Click **Your VPCs**.
-  + Click chọn **Lab VPC**.
-  + Click **Actions**.
-  + Click **Delete VPC**.
+Tại trang [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/).
 
-2. Tại ô confirm, điền **delete** để xác nhận, click **Delete** để thực hiện xóa **Lab VPC** và các tài nguyên liên quan.
+- Nháy chuột vào **Your VPCs**.
+- Chọn **_my-vpc_**.
+- Nháy chuột vào **Actions**, sau đó nháy chuột vào **Delete VPC**.
+- Trong cửa sổ xác nhận, nhập _`delete`_ để xác nhận xóa, sau đó nháy chuột vào **Delete** để xóa **_my-vpc_** và các tài nguyên liên quan đến nó.
 
-![Clean](/images/6.clean/006-clean.png)
+![xóa vpc](/images/clean-up-resource/delete-vpc.png)
+
+#### Xóa các IAM Role
+
+Đi tới trang [AWS Identity and Access Management (IAM)](https://aws.amazon.com/iam/).
+
+- Nháy chuột vào **Roles**.
+- Chọn cả hai role **_ec2-access-s3_** và **_lambda-access-s3-polly_**.
+- Nháy chuột vào **Delete**.
+- Trong cửa sổ xác nhận, nhập _`delete`_ để xác nhận xóa, sau đó nháy chuột vào **Delete** để tiến hành xóa các IAM role.
+
+![xóa các iam role](/images/clean-up-resource/delete-iam-role.png)

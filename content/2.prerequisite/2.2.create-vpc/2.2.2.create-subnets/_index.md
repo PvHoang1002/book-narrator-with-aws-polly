@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 2.2.2 </b> "
 ---
 
-#### Create public subnet
+#### Create **_public-subnet_**
 
 1. At the [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/) page.
    - Click **Subnets**.
@@ -18,14 +18,14 @@ pre: " <b> 2.2.2 </b> "
    - In the **VPC ID** section, select **_my-vpc_**.
    - In the **Subnet name** field, enter _`public-subnet`_.
    - In the **Availability Zone** section, select the first Availability zone **ap-southeast-1a**.
-   - In the field **IPv4 subnet CIRD block** field, enter _`10.10.1.0/24`_.
+   - In the **IPv4 subnet CIRD block** field, enter _`10.10.1.0/24`_.
    - Click **Create subnet**.
 
 ![choose-vpc](/images/create-vpc/subnet/choose-vpc.png)
 
 ![create-public-subnet](/images/create-vpc/subnet/create-public-subnet.png)
 
-#### Create private subnet
+#### Create **_private-subnet_**
 
 1. At the [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/) page.
    - Click **Subnets**.
@@ -37,7 +37,7 @@ pre: " <b> 2.2.2 </b> "
    - In the **VPC ID** section, select **_my-vpc_**.
    - In the **Subnet name** field, enter _`private-subnet`_.
    - In the **Availability Zone** section, select the first Availability zone **ap-southeast-1a**.
-   - In the field **IPv4 subnet CIRD block** field, enter _`10.10.2.0/24`_.
+   - In the **IPv4 subnet CIRD block** field, enter _`10.10.2.0/24`_.
    - Click **Create subnet**.
 
 ![choose-vpc](/images/create-vpc/subnet/choose-vpc.png)

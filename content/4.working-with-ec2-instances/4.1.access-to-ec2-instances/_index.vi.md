@@ -1,50 +1,52 @@
 ---
-title : "Kết nối đến máy chủ Public"
-date :  "`r Sys.Date()`" 
-weight : 1 
-chapter : false
-pre : " <b> 3.1. </b> "
+title: "Truy cập vào các máy ảo"
+date: "`r Sys.Date()`"
+weight: 1
+chapter: false
+pre: " <b> 4.1. </b> "
 ---
-![SSMPublicinstance](/images/arc-02.png)
 
-1. Truy cập vào [giao diện quản trị của dịch vụ EC2](https://console.aws.amazon.com/ec2/v2/home).
-  + Click chọn **Public Linux Instance**.
-  + Click **Actions**.
-  + Click **Security**.
-  + Click **Modify IAM role**.
-
-![Connect](/images/3.connect/001-connect.png)
-
-2. Tại trang Modify IAM role.
-  + Click chọn **SSM-Role**.
-  + Click **Save**.
+Trong bước này, chúng ta sẽ tiến hành truy cập vào máy ảo **_public-instance_** đầu tiên. Máy ảo **_public-instance_** sẽ hoạt động như một máy chủ Bastion để giúp chúng ta truy cập vào máy ảo **_private-instance_**.
 
 {{% notice note %}}
-Bạn sẽ cần chờ khoảng 10 phút trước khi thực hiện bước tiếp theo. Thời gian này EC2 instance của chúng ta sẽ tự động đăng ký với Session Manager.
+Máy chủ Bastion là một máy tính có mục đích đặc biệt để quản lý các máy ảo hoặc cơ sở dữ liệu riêng tư nằm trong private subnet (mà không cần phải xử lý qua Internet). Máy chủ Bastion được đặt trong public subnet và hoạt động như một "cổng kết nối" giữa thế giới bên ngoài và private subnet.
 {{% /notice %}}
 
-3. Truy cập vào [giao diện quản trị của dịch vụ AWS Systems Manager](https://console.aws.amazon.com/systems-manager/home)
-  + Kéo thanh trượt menu bên trái xuống dưới.
-  + Click **Session Manager**.
-  + Click **Start Session**.
+#### Truy cập vào máy ảo **_public-instance_**
 
+1. Đi tới trang [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/).
 
-![Connect](/images/3.connect/002-connect.png)
+   - Nháy chuột vào **Instances**.
+   - Chọn máy ảo **_public-instance_** và copy địa chỉ IP public của nó.
 
+2. Mở **MobaXterm** và tạo một phiên **SSH**.
+   - Trong vùng **Remote host**, nhập địa chỉ IP public vừa copy của máy ảo **_public-instance_**.
+   - Trong vùng **Specify username**, nhập _`ec2-user`_.
+   - Chọn **Use private key** và chọn file **_aws-keypair.pem_** lưu trên máy tính của bạn.
+   - Các cài đặt khác, giữ nguyên theo mặc định. Sau đó nháy chuột vào **OK**.
 
-4. Sau đó chọn **Public Linux Instance** và click **Start session** để truy cập vào instance.
+![kết nối với máy ảo public](/images/connect-ec2/connect-public-instance.png)
 
-![Connect](/images/3.connect/003-connect.png)
+3. Kết nối đến máy ảo **_public-instance_** đã được thiết lập thành công.
+   - Nhập lệnh _`pwd`_ và nhấn phím **Enter** để đảm bảo thư mục làm việc hiện tại là **_/home/ec2-user/_**.
+   - Nhập lệnh _`sudo su`_ và nhấn phím **Enter** (Câu lệnh này có thể không cần thực hiện).
+   - Nhập lệnh _`nano aws-keypair.pem`_ và nhấn phím **Enter**.
 
+![viết file keypair](/images/connect-ec2/nano-keypair-file.png)
 
-5. Terminal sẽ xuất hiện trên trình duyệt. Kiểm tra với câu lệnh ``` sudo tcpdump -nn port 22 ``` và ```sudo tcpdump ``` chúng ta sẽ thấy không có traffic của SSH mà chỉ có traffic HTTPS.
+4. Giữ cửa số **MobaXterm** mở.
+   - Di chuyển tới nơi lưu trữ file **_aws-keypair.pem_** trên máy tính của bạn và mở nó.
+   - Copy khóa riêng tư và paste nó vòa màn hình **MobaXterm**.
+   - Nhấn tổ hợp phím Ctrl + S để lưu nội dung file và Ctrl + X để thoát khỏi trình soạn thảo nano.
 
-![Connect](/images/3.connect/004-connect.png)
+![copy file keypair](/images/connect-ec2/copy-keypair.png)
 
-{{% notice note %}}
- Ở trên, chúng ta đã tạo  kết nối vào public instance mà không cần mở cổng SSH 22, giúp cho việc bảo mật tốt hơn, tránh mọi sự tấn công tới cổng SSH.\
-Một nhược điểm của cách làm trên là ta phải mở Security Group outbound ở cổng 443 ra ngoài internet. Vì là public instance nên có thể sẽ không vấn đề gì nhưng nếu bạn muốn bảo mật hơn nữa, bạn có thể khoá cổng 443 ra ngoài internet mà vẫn sử dụng được Session Manager. Chúng ta sẽ đi qua cách làm này ở phần private instance dưới đây.
- {{% /notice %}}
+#### Truy cập vào máy ảo **_private-instance_**
 
- Bạn có thể terminate để kết thúc session đang kết nối trước khi qua bước tiếp theo.
+1. Tại trang **Instances** trên **AWS Console**, copy địa chỉ IP private của máy ảo **_private-instance_**.
+   - Trên màn hình **MobaXterm**, nhập lệnh _`chmod 400 aws-keypair.pem`_ và nhấn phím **Enter**.
+   - Nhập lệnh _`ssh -i "aws-keypair.pem" ec2-user@private-ip`_ và nhấn phím **Enter** (Hãy nhớ thay cụm _private-ip_ bằng địa chỉ IP private của máy ảo **_private-instance_**).
 
+Kết nối tới máy ảo **_private-instance_** sẽ được thiết lập thành công. Giữ cửa sổ **MobaXterm** mở, chúng ta sẽ tiến tới bước tiếp theo.
+
+![kết nối tới máy ảo private](/images/connect-ec2/connect-private-instance.png)

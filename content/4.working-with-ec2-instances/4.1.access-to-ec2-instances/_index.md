@@ -28,14 +28,14 @@ Bastion host is a special-purpose computer to manage private instances or databa
 ![connect-public-instance](/images/connect-ec2/connect-public-instance.png)
 
 3. Connection to **_public-instance_** has been established successfully.
-   - Enter _`pwd`_ command and press **Enter** to make sure the working directory is **_/home/ec2-user/_**.
-   - Enter _`sudo su`_ command and press **Enter**.
+   - Enter _`pwd`_ command and press **Enter** to ensure the working directory is **_/home/ec2-user/_**.
+   - Enter _`sudo su`_ command and press **Enter** (This command may not need to be executed).
    - Enter _`nano aws-keypair.pem`_ command and press **Enter**.
 
 ![nano-keypair-file](/images/connect-ec2/nano-keypair-file.png)
 
 4. Keep the **MobaXterm** window open.
-   - Navigate to the **_aws-keypair.pem_** file on your computer and open it.
+   - Navigate to the **_aws-keypair.pem_** file storage location on your computer and open it.
    - Copy the private key and paste it into **MobaXterm** screen.
    - Press the key combination Ctrl + S to save the file content and Ctrl + X to exit the nano editor.
 
@@ -45,7 +45,7 @@ Bastion host is a special-purpose computer to manage private instances or databa
 
 1. At the **Instances** page on **AWS Console**, copy the **_private-instance_**'s private IP address.
    - On the **MobaXterm** screen, enter _`chmod 400 aws-keypair.pem`_ command and press **Enter**.
-   - Enter _`ssh -i "aws-keypair.pem" ec2-user@private-ip`_ command and press **Enter** (remember to replace _private-ip_ with **_private-instance_**'s private IP address).
+   - Enter _`ssh -i "aws-keypair.pem" ec2-user@private-ip`_ command and press **Enter** (Remember to replace _private-ip_ with **_private-instance_**'s private IP address).
 
 Connection to **_private-instance_** will be established successfully. Keep the **MobaXterm** window open, we will move to the next step.
 

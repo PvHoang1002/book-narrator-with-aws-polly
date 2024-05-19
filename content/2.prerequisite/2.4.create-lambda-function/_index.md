@@ -8,7 +8,7 @@ pre: " <b> 2.4 </b> "
 
 #### Create function **_text-to-speech-converter_**
 
-Now, we are going to create a Lambda function to listen to events from the newly created **_input-bucket-for-polly_** and from there perform the necessary tasks with AWS Polly.
+Now, we are going to create a Lambda function to listen to events from the newly created **_input-bucket-for-polly_** and from there perform the necessary tasks with **AWS Polly**.
 
 1. Go to [AWS Lambda](https://aws.amazon.com/lambda/).
    ![choose-lambda](/images/create-lambda/choose-lambda.png)
@@ -20,13 +20,13 @@ Now, we are going to create a Lambda function to listen to events from the newly
    - On the top right of the screen, change the **AWS Region** to **Asia Pacific (Singapore) ap-southeast-1**.
    - Then, select **Author from scratch**.
    - In the **Basic information** section, enter _`text-to-speech-converter`_ into the **Function name** field.
-   - In the **Runtime** field, select **Python 3.12**.
+   - At the **Runtime** field, select **Python 3.12**.
 
 ![config-func](/images/create-lambda/config-func.png)
 
 3. In the **Permissions** section.
    - Click **Change default execution role**.
-   - In the **Exection role** select **Use an existing role**.
+   - In the **Exection role** section, select **Use an existing role**.
    - Then, select **_lambda-access-s3-polly_** role.
    - Click **Create function**.
 
@@ -52,7 +52,7 @@ Now, we are going to create a Lambda function to listen to events from the newly
 7. At the **Add trigger** page, in the **Trigger configuration** section.
    - Select **S3** service as a source.
    - Select bucket **_input-bucket-for-polly_**.
-   - In the **Event types** field, select **All object create events**.
+   - At the **Event types** field, select **All object create events**.
 
 ![edit-trigger](/images/create-lambda/edit-trigger.png)
 

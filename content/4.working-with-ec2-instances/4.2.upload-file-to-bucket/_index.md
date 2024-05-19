@@ -19,7 +19,7 @@ pre: " <b> 4.2. </b> "
 2. To upload file **_hello.txt_** to **_input-bucket-for-polly_**.
    - Enter _`aws s3 cp hello.txt s3://input-bucket-for-polly --endpoint-url https://s3.ap-southeast-1.amazonaws.com`_ command and press **Enter**.
 
-There will be a message **_upload: ./hello.txt to s3://input-bucket-for-polly_** appear right after we execute the command. It means the upload action was performed successfully.
+There will be a message: **_upload: ./hello.txt to s3://input-bucket-for-polly_** appear after we execute the command. It means the upload action was performed successfully.
 
 ![upload-hello-to-s3](/images/connect-ec2/upload-hello-to-s3.png)
 

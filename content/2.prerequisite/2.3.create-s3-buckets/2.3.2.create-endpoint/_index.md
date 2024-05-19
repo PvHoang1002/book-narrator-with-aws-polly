@@ -19,9 +19,9 @@ pre: " <b> 2.3.2 </b> "
 
 - In the **Endpoint settings** section.
   - In the **Name tag** field, enter _`s3-endpoint`_.
-  - In the **Service category** field, select **AWS services**.
+  - At the **Service category** field, select **AWS services**.
 - In the **Services** section.
-  - Enter _`com.amazonaws.ap-southeast-1.s3`_ into the search box.
+  - Enter _`com.amazonaws.ap-southeast-1.s3`_ into the search field.
   - Select **com.amazonaws.ap-southeast-1.s3** with Type is **Gateway**.
 
 ![endpoint-settings-1](/images/create-s3/endpoint-settings-1.png)
@@ -46,6 +46,6 @@ In the **Endpoints** section, review the endpoint that was successfully created.
 - Click **Route tables**.
 - Select **_private-route-table_**.
 
-There is a new route mapping to the s3-endpoint we just created.
+There is a new route mapping to the **_s3-endpoint_** we just created.
 
 ![update-private-route-table-success](/images/create-s3/update-private-route-table-success.png)

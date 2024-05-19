@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 2.2.6 </b> "
 ---
 
-#### Create public instance
+#### Create **_public-instance_**
 
 1. Go to [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/).
    ![choose](/images/create-ec2/choose-ec2.png)
@@ -47,7 +47,7 @@ pre: " <b> 2.2.6 </b> "
 
 ![launch-public-instance](/images/create-ec2/launch-public-instance.png)
 
-#### Create private instance
+#### Create **_private-instance_**
 
 1. At the [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/) page.
    - Click **Launch instances**.
@@ -95,7 +95,7 @@ In the **Instances** section, review the two public/private instances that were 
 
 ![create-instances-success](/images/create-ec2/create-ec2-instances-success.png)
 
-7. Choose the **_private-instance_**.
+7. Select the **_private-instance_**.
    - Click **Actions**.
    - Click **Security**.
    - Click **Modify IAM role**.

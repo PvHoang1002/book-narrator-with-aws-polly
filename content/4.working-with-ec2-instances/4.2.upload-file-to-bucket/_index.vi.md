@@ -1,36 +1,37 @@
 ---
-title : "Tạo S3 Bucket"
-date :  "`r Sys.Date()`" 
-weight : 2 
-chapter : false
-pre : " <b> 4.2 </b> "
+title: "Tải file lên S3 bucket"
+date: "`r Sys.Date()`"
+weight: 2
+chapter: false
+pre: " <b> 4.2. </b> "
 ---
 
+#### Tải file **_hello.txt_** lên **_input-bucket-for-polly_**
 
-Trong bước này, chúng ta sẽ tạo 1 S3 bucket để lưu trữ các session logs được gửi từ các EC2 instance.
+1. Hiện tại chúng ta đang làm việc với máy ảo **_private-instance_**.
+   - Nhập lệnh _`nano hello.txt`_ và nhấn phím **Enter**.
+   - Copy nội dung của file văn bản mà chúng ta vừa sử dụng ở [**mục 3**](3.test-lambda-function/).
+   - Paste nó vào màn hình của **MobaXterm**.
+   - Nhấn tổ hợp phím Ctrl + S để lưu nội dung file và Ctrl + X để thoát khỏi trình soạn thảo nano.
 
-#### Tạo **S3 Bucket**
+![viết file hello](/images/connect-ec2/nano-hello-file.png)
 
-1. Truy cập [giao diện quản trị dịch vụ S3](https://s3.console.aws.amazon.com/s3/home)
-  + Click **Create bucket**.
+2. Để tải file **_hello.txt_** lên **_input-bucket-for-polly_**.
+   - Nhập lệnh _`aws s3 cp hello.txt s3://input-bucket-for-polly --endpoint-url https://s3.ap-southeast-1.amazonaws.com`_ và nhấn phím **Enter**.
 
-![S3](/images/4.s3/005-s3.png)
+Sẽ có một thông báo: **_upload: ./hello.txt to s3://input-bucket-for-polly_** xuất hiện sau khi chúng ta thực thi câu lệnh. Nó có nghĩa là việc tải file lên đã diễn ra thành công.
 
-2. Tại trang **Create bucket**.
-  + Tại mục **Bucket name** điền tên bucket **lab-yourname-bucket-0001**
-  + Tại mục **Region** chọn **Region** bạn đang làm lab hiện tại. 
+![tải file hello lên s3 bucket](/images/connect-ec2/upload-hello-to-s3.png)
 
-![S3](/images/4.s3/006-s3.png)
+3. Nhập lệnh _`aws s3 ls hello.txt s3://output-bucket-from-polly --endpoint-url https://s3.ap-southeast-1.amazonaws.com`_ và nhấn phím **Enter**.
 
- {{%notice tip%}}
-Tên S3 bucket phải đảm bảo không trùng với toàn bộ S3 bucket khác trong hệ thống. Bạn có thể thay thế tên mình và điền số ngẫu nhiên khi tạo tên S3 bucket.
-{{%/notice%}}
+Câu lệnh này sẽ liệt kê tất cả những file có trong bucket **_output-bucket-from-polly_** và chúng ta có thể thấy có một file tên là **_hello.mp3_**. Điều đó có nghĩa là hàm Lambda đã được thực thi thành công.
 
-3. Kéo chuột xuống phía dưới và click **Create bucket**.
+![kiểm tra đầu ra file hello](/images/connect-ec2/check-hello-output.png)
 
-![S3](/images/4.s3/007-s3.png)
+4. Đi tới trang [Amazon Simple Storage Service (Amazon S3)](https://aws.amazon.com/s3/).
+   - Chọn bucket **_output-bucket-from-polly_**.
 
- {{%notice tip%}}
-Khi tạo S3 bucket chúng ta đã thực hiện **Block all public access** nên các EC2 instance của chúng ta sẽ không thể kết nối tới S3 thông qua mạng internet.
-Trong bước tiếp theo chúng ta sẽ cấu hình tính năng S3 Gateway Endpoint để cho phép các EC2 instance có thể kết nối tới S3 bucket thông qua mạng nội bộ của VPC.
-{{%/notice%}}
+Trong trang thông tin về bucket **_output-bucket-from-polly_**, chúng ta sẽ thấy file **_hello.mp3_**.
+
+![kiểm tra bucket đầu ra thành công](/images/create-s3/check-output-bucket-success.png)

@@ -16,8 +16,8 @@ pre: " <b> 2.1.1 </b> "
 ![start-create-role](/images/create-role/start-create-role-1.png)
 
 2. At the **Select trusted entity** page.
-   - In the **Trusted entity type** section, select _AWS service_.
-   - In the **Use case** section, select _Lambda_ use case.
+   - In the **Trusted entity type** section, select **AWS service**.
+   - In the **Use case** section, select **Lambda** use case.
    - Click **Next**.
 
 ![choose-lambda-service](/images/create-role/choose-lambda-service.png)
@@ -25,12 +25,12 @@ pre: " <b> 2.1.1 </b> "
 3. At the **Add permissions** page.
 
 - In the **Permissions policies** section, enter _`AmazonS3FullAccess`_ into the search field.
-  - Select _AmazonS3FullAccess_ policy.
+  - Select **_AmazonS3FullAccess_** policy.
 
 ![add-s3-permission](/images/create-role/add-s3-permission-to-ec2.png)
 
 - In the **Permissions policies** section, enter _`AmazonPollyFullAccess`_ into the search field.
-  - Select _AmazonPollyFullAccess_ policy.
+  - Select **_AmazonPollyFullAccess_** policy.
   - Click **Next**.
 
 ![add-polly-permission](/images/create-role/add-polly-permission-to-lambda.png)

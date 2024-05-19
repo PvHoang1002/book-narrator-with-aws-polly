@@ -9,7 +9,7 @@ chapter: false
 
 ### Tổng thể
 
-Dự án này nhằm mục đích tạo ra trải nghiệm thính giác hấp dẫn và dễ tiếp cận cho người đọc bằng cách tận dụng giọng nói có âm thanh tự nhiên và công nghệ chuyển văn bản thành giọng nói tiên tiến của AWS Polly.
+Dự án này nhằm mục đích tạo ra trải nghiệm thính giác hấp dẫn và dễ tiếp cận cho người đọc bằng cách tận dụng giọng nói có âm thanh tự nhiên và công nghệ chuyển văn bản thành giọng nói tiên tiến của **AWS Polly**.
 
 Dưới đây là tổng quan về kiến ​​trúc của dự án:
 
@@ -19,6 +19,6 @@ Dưới đây là tổng quan về kiến ​​trúc của dự án:
 
 1.  [Giới thiệu](1.introduce/)
 2.  [Chuẩn bị](2.prerequisite/)
-3.  [Kiểm tra hàm Lambda](3.test-lambda-function/)
-4.  [Truy cập vào các máy ảo EC2](4.access-to-ec2-instances/)
+3.  [Kiểm thử hàm Lambda](3.test-lambda-function/)
+4.  [Làm việc với các máy ảo EC2](4.working-with-ec2-instances/)
 5.  [Dọn dẹp tài nguyên](5.clean-up-resources/)

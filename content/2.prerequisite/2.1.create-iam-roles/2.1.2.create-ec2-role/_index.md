@@ -14,15 +14,15 @@ pre: " <b> 2.1.2 </b> "
 ![start-create-role](/images/create-role/start-create-role-2.png)
 
 2. At the **Select trusted entity** page.
-   - In the **Trusted entity type** section, select _AWS service_.
-   - In the **Use case** section, select _EC2_ use case.
+   - In the **Trusted entity type** section, select **AWS service**.
+   - In the **Use case** section, select **EC2** use case.
    - Click **Next**.
 
 ![choose-ec2-service](/images/create-role/choose-ec2-service.png)
 
 3. At the **Add permissions** page.
    - In the **Permissions policies** section, enter _`AmazonS3FullAccess`_ into the search field.
-   - Select _AmazonS3FullAccess_ policy.
+   - Select **_AmazonS3FullAccess_** policy.
    - Click **Next**.
 
 ![add-s3-permission](/images/create-role/add-s3-permission-to-ec2.png)

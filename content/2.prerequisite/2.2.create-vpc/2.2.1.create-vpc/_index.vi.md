@@ -1,22 +1,27 @@
 ---
-title : "Tạo VPC "
-date :  "`r Sys.Date()`" 
-weight : 1 
-chapter : false
-pre : " <b> 2.1.1 </b> "
+title: "Tạo VPC"
+date: "`r Sys.Date()`"
+weight: 1
+chapter: false
+pre: " <b> 2.2.1 </b> "
 ---
 
+#### Tạo VPC **_my-vpc_**
 
-#### Tạo VPC **Lab VPC**
-1. Truy cập [giao diện quản trị dịch vụ VPC](https://console.aws.amazon.com/vpc/home)
-  + Click **Your VPC**.
-  + Click **Create VPC**.
+1. Đi tới trang [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/).
+   ![mở vpc](/images/create-vpc/vpc/open-vpc.png)
+   - Nháy chuột vào **Your VPCs**.
+   - Nháy chuột vào **Create VPC**.
 
-![VPC](/images/2.prerequisite/001-createvpc.png)
+![bắt đầu tạo vpc](/images/create-vpc/vpc/start-create-vpc.png)
 
 2. Tại trang **Create VPC**.
-  + Tại mục **Name tag** điền **Lab VPC**.
-  + Tại mục **IPv4 CIDR** điền : **10.10.0.0/16**.
-  + Click **Create VPC**.
+   - Trong phần **Resources to create**, chọn **VPC only**.
+   - Trong vùng **Name tag**, nhập _`my-vpc`_.
+   - Trong vùng **IPv4 CIDR**, nhập: _`10.10.0.0/16`_.
+   - Các cài đặt khác, giữ nguyên theo mặc định.
+   - Nháy chuột vào **Create VPC**.
 
-![VPC](/images/2.prerequisite/002-createvpc.png)
+![cấu hình vpc](/images/create-vpc/vpc/configure-vpc.png)
+
+![tạo vpc](/images/create-vpc/vpc/create-vpc.png)

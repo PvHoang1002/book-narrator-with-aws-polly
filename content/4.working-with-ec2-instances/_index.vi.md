@@ -1,23 +1,16 @@
 ---
-title : "Quản lý session logs"
-date :  "`r Sys.Date()`" 
-weight : 4 
-chapter : false
-pre : " <b> 4. </b> "
+title: "Làm việc với các máy ảo EC2"
+date: "`r Sys.Date()`"
+weight: 4
+chapter: false
+pre: " <b> 4. </b> "
 ---
 
+Bây giờ, chúng ta sẽ không tải file trực tiếp lên S3 bucket như các thao tác trước đó. Thay vào đó, chúng ta sẽ truy cập vào các máy ảo EC2 và thực hiện các hành động với S3 bucket thông qua gateway endpoint.
 
-Với Session Manager chúng ta có thể xem được lịch sử các kết nối tới các instance thông qua **Session history**. Tuy nhiên chúng ta chưa xem được chi tiết các câu lệnh được sử dụng.
+![mô hình vpc](/images/diagrams/vpc-diagram.png)
 
-![S3](/images/4.s3/001-s3.png)
+### Content
 
-Trong phần này chúng ta sẽ tiến hành tạo S3 bucket và thực hiện cấu hình lưu trữ các session logs để xem được chi tiết các câu lệnh được sử dụng trong session.
-
-![port-fwd](/images/arc-log.png) 
-
-### Nội dung:
-
-  - [Cập nhật IAM Role](./4.1-updateiamrole/)
-  - [Tạo **S3 Bucket**](./4.2-creates3bucket/)
-  - [Tạo S3 Gateway endpoint](./4.3-creategwes3)
-  - [Cấu hình **Session logs**](./4.4-configsessionlogs/)
+- [Truy cập vào các máy ảo EC2](4.1.access-to-ec2-instances/)
+- [Tải file lên S3 bucket](4.2.upload-file-to-bucket/)

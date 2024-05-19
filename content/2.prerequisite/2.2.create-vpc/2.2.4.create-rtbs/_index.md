@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 2.2.4 </b> "
 ---
 
-#### Create public route table
+#### Create **_public-route-table_**
 
 1. At the [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/) page.
    - Click **Route tables**.
@@ -42,15 +42,16 @@ pre: " <b> 2.2.4 </b> "
 6. At the **Edit routes** page.
    - Click **Add route**.
    - In the **Destination** field, enter _`0.0.0.0/0`_.
-   - In the **Target** section, select **Internet Gateway**, then select **my-internet-gateway**.
+   - In the **Target** section, select **Internet Gateway**, then select **_my-internet-gateway_**.
+   - Click **Save changes**.
 
 ![save-edit-routes](/images/create-vpc/rtb/save-edit-routes-1.png)
 
-The routes of the **Public route table** were successfully edited.
+The routes of the **_public-route-table_** were successfully edited.
 
 ![edit-routes-success](/images/create-vpc/rtb/edit-routes-success-1.png)
 
-#### Create private route table
+#### Create **_private-route-table_**
 
 1. At the [Amazon Virtual Private Cloud (VPC)](https://aws.amazon.com/vpc/) page.
    - Click **Route tables**.
